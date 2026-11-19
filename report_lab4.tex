@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\title{\textbf{COMP SCI 640 --- Lab 4 Report}}
+\author{}
+\date{}
+
+% Compile with: pdflatex report_lab4.tex
+% Replace the blank spaces with your answers; add pages as needed.
+% The comments below are reminders. Follow Q1--Q5 in the assignment specification.
+% Cite run IDs, log filenames, and line numbers for your evidence.
+% Include selected annotated excerpts in this report; submit full logs separately.
+
+\begin{document}
+\maketitle
+
+\section*{Group Information}
+
+\textbf{Group Number:} \underline{\hspace{3cm}}
+
+\textbf{Group Members:}
+\begin{enumerate}
+    \item \underline{\hspace{7cm}}
+    \item \underline{\hspace{7cm}}
+    \item \underline{\hspace{7cm}}
+    \item \underline{\hspace{7cm}}
+\end{enumerate}
+
+\section*{Setup Photo}
+
+% Put a photo of both boards in the same folder and name it boards.jpg.
+% It will replace the placeholder below automatically.
+% Change the filename or image dimensions here if needed.
+\begin{figure}[H]
+    \centering
+    \IfFileExists{boards.jpg}{%
+        \includegraphics[width=0.9\linewidth,height=5cm,keepaspectratio]{boards.jpg}%
+    }{%
+        \fbox{\parbox[c][4cm][c]{0.9\linewidth}{\centering
+            Insert a photo showing both boards.}}%
+    }
+    \caption{Our two-board experimental setup.}
+\end{figure}
+
+\newpage
+
+\subsection*{Q1}
+% Write your answer here.
+% Decode one actual 20-byte DATA header and show successful CRC verification.
+% Show application delivery and verification of the final 17-byte message.
+% With a two-second initial send delay, show the application waiting and waking.
+% Cite the blocking queue-receive call in your code.
+\vspace{2cm}
+
+\subsection*{Q2}
+% Write your answer here.
+% Annotate the normal-delivery trace to show several outstanding DATA packets.
+% For the DATA 3 loss, show repeated ACKs, discarded out-of-order packets,
+% the timeout, and the retransmitted range.
+% For the corrupted final ACK, show received/recomputed CRCs, rejection before
+% state changes, and recovery without duplicate application delivery.
+% Compare the observed timeout with 500 ms using one board's timestamps.
+\vspace{2cm}
+
+\subsection*{Q3}
+% Write your answer here and insert your queue/window plot.
+% Plot queue occupancy Q and advertised Window W using the receiver's clock.
+% Identify a packet acknowledged before the application read it; mark both events.
+% Show one sender-side ACK (a,w), the resulting limit R, and newly allowed DATA.
+% Explain overflow prevention and compare the fast and slow runs.
+% State whether you used an initial pause in application reads.
+%
+% Example for inserting your plot (uncomment after adding the image):
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\linewidth]{queue_window.pdf}
+%     \caption{Queue occupancy and advertised window during our slow run.}
+%     \label{fig:queue-window}
+% \end{figure}
+\vspace{2cm}
+
+\subsection*{Q4}
+% Write your answer here.
+% Show ACK (8,0), one application read, the dropped ACK (8,1), the periodic
+% replacement, and acceptance of DATA 9. Explain why sending resumes even
+% though the ACK number stays at 8.
+% Show transfer completion and that no second application read broke the stall.
+\vspace{2cm}
+
+\subsection*{Q5}
+% Write your answer here and include the F/S/L comparison table.
+% For each condition, report: successful trials out of three; median and
+% minimum--maximum successful goodput (bytes/s); median DATA retransmissions
+% across all three trials; and the largest queue occupancy observed.
+% Use N/A for goodput when no trial succeeded.
+% Explain performance using your measurements and earlier traces. Include
+% integrity checks and full-queue discard counts.
+% Describe one bug fixed or a specific correctness check, with evidence.
+% Submit all nine trial rows separately in the required CSV file.
+\vspace{2cm}
+
+\end{document}
